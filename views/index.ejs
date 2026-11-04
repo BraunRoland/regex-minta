@@ -11,19 +11,28 @@
     <form method="post">
         <label> Usernév: <br>
             <input type="text" name="username">
-        </label>
+            <% if (locals.error && locals.userErr != null) {%>
+                <p><%= locals.userErr %></p>
+            <% } %>
+        </label> <br>
         <label> Nicknév: <br>
             <input type="text" name="nickname">
-        </label>
+            <% if (locals.error && locals.nickErr != null) {%>
+                <p><%= locals.nickErr %></p>
+            <% } %>
+        </label><br>
         <label> HEX-kód: <br>
             <input type="text" name="hex">
-        </label>
+            <% if (locals.error && locals.hexErr != null) {%>
+                <p><%= locals.hexErr %></p>
+            <% } %>
+        </label><br>
         <label> Profilkép: <br>
             <input type="text" name="https">
-        </label>
-        <% if (locals.error) {%>
-            <p><%= locals.error %></p>
-        <% } %>
+            <% if (locals.error && locals.profileErr != null) {%>
+                <p><%= locals.profileErr %></p>
+            <% } %>
+        </label><br> <br>
         <button type="submit">Módosítás</button>
     </form>
 </body>
